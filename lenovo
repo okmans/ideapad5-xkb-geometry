@@ -10,24 +10,24 @@ xkb_geometry "x1carbon" {
     labelColor = "white";
 
     // shapes for different keys
-    shape "ESC"  { cornerRadius = 1, { [22.75, 12] } };
-    shape "FN0"  { cornerRadius = 1, { [16, 12] } };
-    shape "NORM" { cornerRadius = 1, { [18, 18] } };
-    shape "BKSP" { cornerRadius = 1, { [38, 18] } };
-    shape "TABK" { cornerRadius = 1, { [27, 18] } };
-    shape "BKSL" { cornerRadius = 1, { [29, 18] } };
-    shape "CAPS" { cornerRadius = 1, { [31, 18] } };
-    shape "RTRN" { cornerRadius = 1, { [45, 18] } };
-    shape "LFSH" { cornerRadius = 1, { [41, 18] } };
-    shape "RTSH" { cornerRadius = 1, { [55, 18] } };
-    shape "LCTL" { cornerRadius = 1, { [21, 18] } };
-    shape "SPCE" { cornerRadius = 1, { [98, 18] } };
-    shape "ARRS" { cornerRadius = 1, { [17, 12] } };
-    shape "PGUD" { cornerRadius = 1, { [17, 10.5] } };
+    shape "ESC"  { cornerRadius = 1, { [22.75, 12] }};
+    shape "FN0"  { cornerRadius = 1, { [16, 12] }};
+    shape "NORM" { cornerRadius = 1, { [18, 18] }};
+    shape "BKSP" { cornerRadius = 1, { [38, 18] }};
+    shape "TABK" { cornerRadius = 1, { [27, 18] }};
+    shape "BKSL" { cornerRadius = 1, { [29, 18] }};
+    shape "CAPS" { cornerRadius = 1, { [31, 18] }};
+    shape "RTRN" { cornerRadius = 1, { [45, 18] }};
+    shape "LFSH" { cornerRadius = 1, { [41, 18] }};
+    shape "RTSH" { cornerRadius = 1, { [55, 18] }};
+    shape "LCTL" { cornerRadius = 1, { [21, 18] }};
+    shape "SPCE" { cornerRadius = 1, { [98, 18] }};
+    shape "ARRS" { cornerRadius = 1, { [17, 12] }};
+    shape "PGUD" { cornerRadius = 1, { [17, 10.5] }};
 
     // other shapes
-    shape "LED"  { cornerRadius = 2, { [2,  2] } };
-    shape "BG" { cornerRadius = 1, { [302, 123]} };
+    shape "LED"  { cornerRadius = 2, { [2,  2] }};
+    shape "BG" { cornerRadius = 1, { [302, 123] }};
 
     // background patch around all keys
     solid "Background" {
