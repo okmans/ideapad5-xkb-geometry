@@ -161,8 +161,8 @@ xkb_geometry "ideapad5" {
     shape "KPAD" {{ [16, 38] }};
 
     // other shapes
-    shape "LED"  { cornerRadius = 1, { [2,  2] } };
-    shape "BG" { cornerRadius = 1, { [366, 113]} };
+    shape "LED"  { cornerRadius = 1, { [2,  2] }};
+    shape "BG" { cornerRadius = 1, { [366, 113] }};
 
     // background patch around all keys
     solid "Background" {
