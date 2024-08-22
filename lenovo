@@ -155,7 +155,7 @@ xkb_geometry "ideapad5" {
     shape "KPAD" {{ [16, 38] }};
 
     // other shapes
-    shape "LED"  { cornerRadius = 2, { [2,  2] } };
+    shape "LED"  { cornerRadius = 1, { [2,  2] } };
     shape "BG" { cornerRadius = 1, { [366, 113]} };
 
     // background patch around all keys
@@ -181,6 +181,31 @@ xkb_geometry "ideapad5" {
                 <INS>, <PRSC>, { <DELE>, "ESC" }
             };
         };
+
+        overlay "FN" {
+            <ESC>=<I473>,   // XF86Fn_Esc
+            <FK01>=<MUTE>,  // XF86AudioMute
+            <FK02>=<VOL->,  // XF86AudioLowerVolume
+            <FK03>=<VOL+>,  // XF86AudioRaiseVolume
+            <FK04>=<FK20>,  // XF86AudioMicMute
+            <FK05>=<I232>,  // XF86MonBrightnessDown
+            <FK06>=<I233>,  // XF86MonBrightnessUp
+            <FK07>=<I173>,  //
+            <FK08>=<I255>,  // XF86RFKill
+            <FK09>=<I171>,  //
+            <FK10>=<I160>,  // XF86ScreenSaver
+            <FK11>=<I122>,  //
+            <FK12>=<I24>,   // XF86Calculator
+            <INS>=<I66>,    // XF86Favorites
+            <PRSC>=<I642>   // XF86SelectiveScreenshot
+        };
+
+        // specification for FnLock indicator
+        indicator.onColor = "red";
+        indicator.offColor = "grey40";
+        indicator.shape = "LED";
+        indicator.top = 1;
+        indicator "FnLock" { left = 17; };
     };
 
     // main key section
@@ -219,6 +244,14 @@ xkb_geometry "ideapad5" {
                 { <RTRN>, "RTRN" }
             };
         };
+
+        // specification for caps lock indicator
+        indicator.onColor = "red";
+        indicator.offColor = "grey40";
+        indicator.shape = "LED";
+        indicator.top = 41;
+        indicator "Caps Lock" { left = 31; };
+
         row {
             top = 60;
             keys {
@@ -232,7 +265,9 @@ xkb_geometry "ideapad5" {
         row {
             top = 80;
             keys {
-                { <LCTL>, "LCTL" }, <FN>, <LWIN>, <LALT>,
+                { <LCTL>, "LCTL" },
+                <I472>, // XF86Fn
+                <LWIN>, <LALT>,
                 { <SPCE>, "SPCE" },
                 <RALT>, <RCTL>
             };
@@ -251,11 +286,6 @@ xkb_geometry "ideapad5" {
             };
         };
         row {
-            keys {
-                <HOME>, { <PGUP>, "ARRS" }, <END>
-            };
-        };
-        row {
             key.shape = "ARRS";
             top = 9;
             left = 24;
@@ -263,26 +293,27 @@ xkb_geometry "ideapad5" {
                 <DOWN>
             };
         };
-        row {
-            key.shape = "ARRS";
-            top = 9;
-            left = 24;
-            keys {
-                <PGDN>
-            };
+        overlay "ARRS" {
+            <UP>=<PGUP>,
+            <DOWN>=<PGDN>,
+            <LEFT>=<HOME>,
+            <RGHT>=<END>
         };
     };
 
     // multimedia keys
     section "Multimedia" {
-         left = 292;
+        left = 292;
         top = 2;
         key.gap = 2;
         key.shape = "FN0";
         row {
             top = 0;
             keys {
-                <PLAY>, <STOP>, <FWD>, <BWD>
+                <I22>,  // XF86AudioPlay, XF86AudioPause
+                <I24>,  // XF86AudioStop
+                <I10>,  // XF86AudioPrev
+                <I19>   // XF86AudioNext
             };
         };
 
@@ -301,6 +332,14 @@ xkb_geometry "ideapad5" {
                 <NMLK>, <KPDV>, <KPMU>, <KPSU>
             };
         };
+
+        // specification for NumLock indicator
+        indicator.onColor = "red";
+        indicator.offColor = "grey40";
+        indicator.shape = "LED";
+        indicator.top = 1;
+        indicator "Num Lock" { left = 15; };
+
         row {
             top = 20;
             keys { <KP7>, <KP8>, <KP9>, { <KPAD>, "KPAD" } };
@@ -322,25 +361,4 @@ xkb_geometry "ideapad5" {
             };
         };
     };
-
-    // specification for caps lock indicator
-    indicator.onColor = "red";
-    indicator.offColor = "grey40";
-    indicator.shape = "LED";
-    indicator.top = 58;
-    indicator "Caps Lock" { left = 29; };
-
-    // specification for NumLock indicator
-    indicator.onColor = "red";
-    indicator.offColor = "grey40";
-    indicator.shape = "LED";
-    indicator.top = 16;
-    indicator "Num Lock" { left = 306; };
-
-    // specification for FnLock indicator
-    indicator.onColor = "red";
-    indicator.offColor = "grey40";
-    indicator.shape = "LED";
-    indicator.top = 6;
-    indicator "FnLock" { left = 16; };
 };
