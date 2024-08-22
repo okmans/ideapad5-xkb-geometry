@@ -348,11 +348,15 @@ xkb_geometry "ideapad5" {
 
         row {
             top = 20;
-            keys { <KP7>, <KP8>, <KP9>, { <KPAD>, "KPAD" } };
+            keys {
+                <KP7>, <KP8>, <KP9>, { <KPAD>, "KPAD" }
+            };
         };
         row {
             top = 40;
-            keys { <KP4>, <KP5>, <KP6> };
+            keys {
+                <KP4>, <KP5>, <KP6>
+            };
         };
         row {
             top = 60;
