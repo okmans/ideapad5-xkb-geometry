@@ -176,8 +176,8 @@ xkb_geometry "ideapad5" {
             keys {
                 { <ESC>, "ESC" },
                 <FK01>, <FK02>, <FK03>, <FK04>,
-                { <FK05>, 2 }, <FK06>, <FK07>, <FK08>,
-                { <FK09>, 2 }, <FK10>, <FK11>, <FK12>,
+                <FK05>, <FK06>, <FK07>, <FK08>,
+                <FK09>, <FK10>, <FK11>, <FK12>,
                 <INS>, <PRSC>, { <DELE>, "ESC" }
             };
         };
