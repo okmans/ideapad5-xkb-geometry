@@ -1,8 +1,13 @@
-# ThinkPad X1 Carbon XKB Geometry
+# Lenovo laptops XKB Geometries
+
+## Supported
+
+- ThinkPad X1 Carbon
+- IdeaPad 5
 
 ![Demo screenshot with us layout](demo.png)
 
-Here is my [XKB geometry file](x1carbon) for my Lenovo ThinkPad X1 Carbon Gen 6 with `us` keyboard layout. Note that all measurements are taken by eye. Feel free to make a pull request for improving the layout, including other X1 Carbon generations or including other country layouts.
+Here is the [XKB geometry file](lenovo) for Lenovo laptops with `us` keyboard layout. Note that all measurements are taken by eye. Feel free to make a pull request for improving the layout.
 
 The geometry features a CapsLock indicator.
 
@@ -20,22 +25,24 @@ As I understand, XKB configuration can be quite different on different operating
     ```
     and add the following line somewhere in this section:
     ```
-      x1carbon = x1carbon
+      x1carbon = lenovo(x1carbon)
     ```
 
 3.  You can test the geometry by setting your model for the current X session with:
     ```
-    setxkbmap -model "x1carbon"
+    setxkbmap -model "lenovo(x1carbon)"
     ```
-    For viewing the geometry, I just click on the language selector dropdown at the main menu panel and select *Show Keyboard Layout*. See the above screenshot as an example of what I get there. Note that I tried setting the geometry directly, but this would not work for me for some reason.
+    For viewing the geometry, I use the following command.
+    ```
+    setxkbmap us -geometry 'lenovo(x1carbon)' -print | xkbcomp - - | xkbprint - - | ps2pdf - > x1carbon.pdf
+    ```
 
 4.  You can make the setting persistent by creating and X config file in `/usr/share/X11/xorg.conf.d/` with the specific settings. Here's the content of my config file **20-keyboard-x1carbon.conf**:
     ```
     Section "InputClass"
         Identifier "keyboard defaults"
         MatchIsKeyboard "on"
-
-        Option "XkbModel" "x1carbon"
+        Option "XkbModel" "lenovo(x1carbon)"
         Option "XkbLayout" "us,de"
         Option "XKbOptions" ""
     EndSection

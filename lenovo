@@ -1,7 +1,9 @@
 // Created by Patrick Faion
-// Geometry specification for Lenovo ThinkPad X1 Carbon
+// Extended by Alexander Oakman
+// Geometry specifications for Lenovo laptops
 
-xkb_geometry "common" {
+xkb_geometry "x1carbon" {
+    description = "Lenovo ThinkPad X1 Carbon";
     width = 302;
     height = 123;
     key.color = "grey80";
@@ -126,4 +128,219 @@ xkb_geometry "common" {
 	indicator.shape = "LED";
 	indicator.top = 58;
 	indicator "Caps Lock" { left = 29; };
+};
+
+xkb_geometry "ideapad5" {
+    description = "Lenovo IdeaPad 5";
+    width = 366;
+    height = 113;
+    key.color = "grey80";
+    labelColor = "white";
+
+    // shapes for different keys
+    shape.cornerRadius= 1;
+    shape "NORM" {{ [18, 18] }};
+    shape "ESC"  {{ [18, 9] }};
+    shape "TLDE" {{ [16, 18] }};
+    shape "FN0"  {{ [16, 9] }};
+    shape "TABK" {{ [26, 18] }};
+    shape "BKSL" {{ [29, 18] }};
+    shape "CAPS" {{ [32, 18] }};
+    shape "RTRN" {{ [36, 18] }};
+    shape "SHFT" {{ [42, 18] }};
+    shape "LCTL" {{ [22, 18] }};
+    shape "SPCE" {{ [98, 18] }};
+    shape "ARRS" {{ [18, 9] }};
+    shape "KP0"  {{ [34, 18] }};
+    shape "KPAD" {{ [16, 38] }};
+
+    // other shapes
+    shape "LED"  { cornerRadius = 2, { [2,  2] } };
+    shape "BG" { cornerRadius = 1, { [366, 113]} };
+
+    // background patch around all keys
+    solid "Background" {
+        shape = "BG";
+        left = 0;
+        top = 0;
+        color = "gray40";
+    };
+
+    // function key row
+    section "Function" {
+        left = 0;
+        top = 2;
+        key.gap = 2;
+        key.shape = "FN0";
+        row {
+            keys {
+                { <ESC>, "ESC" },
+                <FK01>, <FK02>, <FK03>, <FK04>,
+                { <FK05>, 2 }, <FK06>, <FK07>, <FK08>,
+                { <FK09>, 2 }, <FK10>, <FK11>, <FK12>,
+                <INS>, <PRSC>, { <DELE>, "ESC" }
+            };
+        };
+    };
+
+    // main key section
+    section "Main" {
+        left = 0;
+        top = 13;
+        key.gap = 2;
+        key.shape = "NORM";
+        row {
+            keys {
+                { <TLDE>, "TLDE" },
+                <AE01>, <AE02>, <AE03>, <AE04>,
+                <AE05>, <AE06>, <AE07>, <AE08>,
+                <AE09>, <AE10>, <AE11>, <AE12>,
+                { <BKSP>, "CAPS" }
+            };
+        };
+        row {
+            top = 20;
+            keys {
+                { <TAB>, "TABK" },
+                <AD01>, <AD02>, <AD03>, <AD04>,
+                <AD05>, <AD06>, <AD07>, <AD08>,
+                <AD09>, <AD10>, <AD11>, <AD12>,
+                { <BKSL>, "LCTL" }
+            };
+        };
+        row {
+            top = 40;
+            keys {
+                { <CAPS>, "CAPS" },
+                <AC01>, <AC02>, <AC03>,
+                <AC04>, <AC05>, <AC06>,
+                <AC07>, <AC08>, <AC09>,
+                <AC10>, <AC11>,
+                { <RTRN>, "RTRN" }
+            };
+        };
+        row {
+            top = 60;
+            keys {
+                { <LFSH>, "SHFT" },
+                <AB01>, <AB02>, <AB03>,
+                <AB04>, <AB05>, <AB06>,
+                <AB07>, <AB08>, <AB09>,
+                { <AB10>, "LCTL" } , { <RTSH>, "SHFT" }
+            };
+        };
+        row {
+            top = 80;
+            keys {
+                { <LCTL>, "LCTL" }, <FN>, <LWIN>, <LALT>,
+                { <SPCE>, "SPCE" },
+                <RALT>, <RCTL>
+            };
+        };
+    };
+
+    // arrow keys
+    section "Arrows" {
+        left = 224;
+        top = 93;
+        key.shape = "LCTL";
+        key.gap = 2;
+        row {
+            keys {
+                <LEFT>, { <UP>, "ARRS" }, <RGHT>
+            };
+        };
+        row {
+            keys {
+                <HOME>, { <PGUP>, "ARRS" }, <END>
+            };
+        };
+        row {
+            key.shape = "ARRS";
+            top = 9;
+            left = 24;
+            keys {
+                <DOWN>
+            };
+        };
+        row {
+            key.shape = "ARRS";
+            top = 9;
+            left = 24;
+            keys {
+                <PGDN>
+            };
+        };
+    };
+
+    // multimedia keys
+    section "Multimedia" {
+         left = 292;
+        top = 2;
+        key.gap = 2;
+        key.shape = "FN0";
+        row {
+            top = 0;
+            keys {
+                <PLAY>, <STOP>, <FWD>, <BWD>
+            };
+        };
+
+    };
+
+    // numpad
+    section "Keypad" {
+        left = 292;
+        top = 13;
+        key.gap = 2;
+        key.shape = "TLDE";
+        row {
+            top = 0;
+            key.color= "grey20";
+            keys {
+                <NMLK>, <KPDV>, <KPMU>, <KPSU>
+            };
+        };
+        row {
+            top = 20;
+            keys { <KP7>, <KP8>, <KP9>, { <KPAD>, "KPAD" } };
+        };
+        row {
+            top = 40;
+            keys { <KP4>, <KP5>, <KP6> };
+        };
+        row {
+            top = 60;
+            keys {
+                <KP1>, <KP2>, <KP3>, { <KPEN>, "KPAD" }
+            };
+        };
+        row {
+            top = 80;
+            keys {
+                { <KP0>, "KP0" }, <KPDL>
+            };
+        };
+    };
+
+    // specification for caps lock indicator
+    indicator.onColor = "red";
+    indicator.offColor = "grey40";
+    indicator.shape = "LED";
+    indicator.top = 58;
+    indicator "Caps Lock" { left = 29; };
+
+    // specification for NumLock indicator
+    indicator.onColor = "red";
+    indicator.offColor = "grey40";
+    indicator.shape = "LED";
+    indicator.top = 16;
+    indicator "Num Lock" { left = 306; };
+
+    // specification for FnLock indicator
+    indicator.onColor = "red";
+    indicator.offColor = "grey40";
+    indicator.shape = "LED";
+    indicator.top = 6;
+    indicator "FnLock" { left = 16; };
 };
