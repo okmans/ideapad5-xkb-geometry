@@ -52,5 +52,6 @@ As I understand, XKB configuration can be quite different on different operating
 ## Links
 
 - [The X Keyboard Extension: Protocol Specification](https://www.x.org/releases/current/doc/kbproto/xkbproto.pdf)
+- [XkXKeyboardConfigeyb repo](https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config)
 - [FreeDesctop: XKeyboardConfig](https://www.freedesktop.org/wiki/Software/XKeyboardConfig/)
 - [The X New Developer’s Guide: The X Keyboard Extension](https://www.x.org/wiki/guide/hutterer-kbd/)
