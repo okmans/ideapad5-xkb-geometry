@@ -48,3 +48,9 @@ As I understand, XKB configuration can be quite different on different operating
     EndSection
     ```
     Note that you will also have to specify the layouts you want to include. You can have a look at the [ArchLinux Wiki for XKB](https://wiki.archlinux.org/index.php/Xorg/Keyboard_configuration) for an overview about setting other possible options here.
+
+## Links
+
+- [The X Keyboard Extension: Protocol Specification](https://www.x.org/releases/current/doc/kbproto/xkbproto.pdf)
+- [FreeDesctop: XKeyboardConfig](https://www.freedesktop.org/wiki/Software/XKeyboardConfig/)
+- [The X New Developer’s Guide: The X Keyboard Extension](https://www.x.org/wiki/guide/hutterer-kbd/)
